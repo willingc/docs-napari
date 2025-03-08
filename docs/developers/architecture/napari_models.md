@@ -8,6 +8,8 @@ is not necessary to use napari and is more aimed at developers interested in
 understanding the inner workings of napari. This document assumes you're
 familiar with basic usage of napari.
 
+## Main components
+
 The three main components:
 
 * Python models describing components in the napari application - these are able
