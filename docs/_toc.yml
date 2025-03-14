@@ -45,7 +45,6 @@ subtrees:
               - file: howtos/layers/image
               - file: howtos/layers/labels
               - file: howtos/layers/points
-              - file: howtos/layers/shapes
               - file: howtos/layers/surface
               - file: howtos/layers/tracks
               - file: howtos/layers/vectors
@@ -75,7 +74,6 @@ subtrees:
       - file: further-resources/napari-workshops
       - file: further-resources/sample_data
       - file: troubleshooting
-      - file: gallery
       - file: release/index
         subtrees:
         - entries:

@@ -74,13 +74,6 @@ and analysis. With napari you can:
 
 ::::{grid}
 
-:::{grid-item-card} Examples
-:link: gallery
-:link-type: ref
-
-See some of the things napari can do.
-:::
-
 :::{grid-item-card} Installation
 :link: napari-installation
 :link-type: ref

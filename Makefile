@@ -2,12 +2,6 @@
 
 SPHINXOPTS =
 
-# Gallery path must be given relative to the docs/ folder
-
-ifeq ($(GALLERY_PATH),)
-GALLERY_PATH := ../../napari/examples
-endif
-
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(dir $(mkfile_path))
 docs_dir := $(current_dir)docs
@@ -51,6 +45,9 @@ html-live: prep-docs
 
 html-noplot: clean prep-docs
 	NAPARI_APPLICATION_IPY_INTERACTIVE=0 sphinx-build -M html docs/ docs/_build -D plot_gallery=0 -D sphinx_gallery_conf.examples_dirs=$(GALLERY_PATH) $(SPHINXOPTS)
+
+html-slim: clean
+	sphinx-build -M html docs/ docs/_build $(SPHINXOPTS)
 
 linkcheck-files: prep-docs
 	NAPARI_APPLICATION_IPY_INTERACTIVE=0 sphinx-build -b linkcheck -D plot_gallery=0 --color docs/ docs/_build/html ${FILES} -D sphinx_gallery_conf.examples_dirs=$(GALLERY_PATH) $(SPHINXOPTS)
