@@ -7,6 +7,7 @@
 :Author: "Andy Sweet <mailto:andrewdsweet@gmail.com>"
 :Author: "Kevin Yamauchi <mailto:kevin.yamauchi@gmail.com>"
 :Created: '2022-03-23'
+:Updated: '2025-04'
 :Status: Active
 :Type: Process
 ```
@@ -164,7 +165,7 @@ All NAPs should be created with the `Draft` status.
 The author of the NAP should periodically update the NAP with new points
 both against and in favor of the NAP raised in discussion.
 
-Eventually, after discussion, there may be a consensus that the NAP
+After discussion, typically one month, there may be a consensus that the NAP
 should be accepted – see the next section for details. At this point
 the status becomes `Accepted`.
 
@@ -259,7 +260,7 @@ If there *are* substantive objections, then the NAP remains in
 proposed for acceptance again later once the objections are resolved.
 
 In unusual cases, when no consensus can be reached between core developers,
-the [napari Steering Council] may be asked to decide whether a
+the NAP champion may ask the [napari Steering Council] to decide whether a
 controversial NAP is accepted, according to our
 {ref}`governance <napari-governance>`.
 
