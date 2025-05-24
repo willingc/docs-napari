@@ -244,8 +244,8 @@ menu.
 
 #### `New Layer`
 
-This menu will contain built-in `napari` commands for creating new empty layers (similar to 
-the 'new layer' buttons atop the layerlist), but also allow plugins to declare commands that 
+This menu will contain built-in `napari` commands for creating new empty layers (similar to
+the 'new layer' buttons atop the layerlist), but also allow plugins to declare commands that
 open new empty layers with specific properties e.g. a `zarr`-backed `Labels` layer, an
 `Image` layer with a specific `dtype`, or a `Points` layer with specific default features.
 
@@ -261,16 +261,16 @@ It may never make sense for such plugins to distribute their widgets across the 
 data formats or layer types.
 
 We therefore give plugin developers full control over their own submenu under `Plugins->My Plugin`.
-Plugin developers can organize all contributions under this submenu as they see fit, including adding 
+Plugin developers can organize all contributions under this submenu as they see fit, including adding
 their own submenus of arbitrary depth.
 
 All commands offered by a plugin will always be available in the plugin's submenu, regardless of
 their presence in other menus. If the plugin defines its own submenus, these will always be first,
-followed by a separator, then any commands with no dedicated menu entry for the plugin's own 
+followed by a separator, then any commands with no dedicated menu entry for the plugin's own
 submenu. These will be alphabetically ordered.
 
 To declare a new submenu for itself, a plugin can add a submenu entry whose id is prefixed
-with the plugin's own name. For example, the following manifest declares one command for the 
+with the plugin's own name. For example, the following manifest declares one command for the
 `napari/layers/segment` submenu, and one for its own `specific-analysis` submenu.
 
 ```yaml
@@ -323,11 +323,11 @@ Layers
 ├─ Classify
 ```
 
-As a case study, we take four plugins offering between 9 and 14 widget contributions and arrange their widgets in these menus: 
+As a case study, we take four plugins offering between 9 and 14 widget contributions and arrange their widgets in these menus:
 `empanada-napari`, `napari-stracking`, `napari-mm3` and `napari-clemreg`. We have not listed the Plugins menu for most plugins,
 as it simply contains all widgets. However, for `empanada-napari`, we demo a new submenu, and show the widgets with entries
 in other menus at the bottom.
-Note that we have arranged these widgets purely based on title and cursory inspection of the documentation, 
+Note that we have arranged these widgets purely based on title and cursory inspection of the documentation,
 so this should not be considered a concrete proposal for the structure of these plugins.
 
 ```
@@ -409,21 +409,21 @@ so that users can be confident of what will happen when they click on an item.
 ### Item Grouping & Ordering
 
 Previously, plugin contributions were limited to the `Plugins` menu and grouped
-under the plugin's name. Now that plugin contributions can be colocated with 
+under the plugin's name. Now that plugin contributions can be colocated with
 native napari actions, it's important that users are able to distinguish
 the source of menu items.
 
 To that end, napari items should always be grouped separately to plugin items
-in all menus, and listed first. Additionally, the plugin's name should also be listed with 
+in all menus, and listed first. Additionally, the plugin's name should also be listed with
 each plugin contribution. Since plugin names can be quite long, future work should
 consider more concise ways to indicate menu item sources, including using icons.
 If using an icon, the plugin's display name should be available on hover.
 
-Otherwise, plugin commands will be grouped according to the given `order` and 
+Otherwise, plugin commands will be grouped according to the given `order` and
 `group` parameters if there are any, or otherwise at the bottom of the given menu,
 below a separator, in alphabetical order. Where a group only contains a single item
 after all plugin and napari actions have been registered, a separator will not be added. Otherwise,
-groups will be separated by a separator. 
+groups will be separated by a separator.
 
 
 ### Items that Don't Fit?
@@ -480,7 +480,7 @@ Request, though they may, if they wish.
 
 This document has so far discussed menu contributions exclusively from
 the plugin developer's perspective. In general, napari will continue
-to be opinionated about what plugin developers can and cannot change 
+to be opinionated about what plugin developers can and cannot change
 about the napari interface through menu contributions. Our guiding principle
 here is that users should never be surprised by the napari interface as a result
 of standard plugin contributions - menus shouldn't move around, or be hidden, layer
@@ -517,9 +517,9 @@ single pull request if it makes sense to implement it in discrete phases).
 If a new NAP document is created, it should be added to the documentation Table
 of Contents as an item on `napari/docs/_toc.yml`. -->
 
-Issue number [#7012](https://github.com/napari/napari/issues/7012) tracks the 
+Issue number [#7012](https://github.com/napari/napari/issues/7012) tracks the
 current progress towards NAP-6 implementation,
-and PR number [#7011](https://github.com/napari/napari/pull/7011) implements 
+and PR number [#7011](https://github.com/napari/napari/pull/7011) implements
 the proposed contributable menus with some
 limitations as described in the tracking issue.
 When this NAP is finalized, the tracking issue contents should be copied to this
@@ -597,8 +597,8 @@ design to ensure the user still knows what to expect when they load up
 the `Viewer`.
 
 **Location preferences:** One option to consider when moving/removing
-menus is allowing plugin developers to declare a preference list of 
-menu locations, such that if one location is no longer available, 
+menus is allowing plugin developers to declare a preference list of
+menu locations, such that if one location is no longer available,
 the menu item is placed in the next location on the preference list.
 
 ## Alternatives
@@ -625,7 +625,7 @@ interactions and plugin contributions e.g. multi canvas
 - **Jun 2 2022: npe2 #161** After further discussion (on zulip and in PR), this schema is identified as potentially too limiting and there is mention that #160 may need to be reverted. A NAP is once again suggested as this is an influential decision with lots of opinions.
 - **Jun 13 2022: npe2 #161** is closed and #160 is reverted, with comment for follow up over in the napari repo.
 - **[Sep 30 2022: napari #5153](https://github.com/napari/napari/pull/5153)** opened with same list as in npe2, minimal discussion and input.
-- **Oct 28 2022: napari #5153** discussion on core devs zulip stream begins. Developers mostly agree on the individual menu items but don't like how deep the `Tools` menu already is, and the lack of semantic meaning in its structure. 
+- **Oct 28 2022: napari #5153** discussion on core devs zulip stream begins. Developers mostly agree on the individual menu items but don't like how deep the `Tools` menu already is, and the lack of semantic meaning in its structure.
 - **[Dec 22 2022: NAP6 PR](https://github.com/napari/docs/pull/77)** is opened and there is much discussion. Implementation is blocked by `app-model` work, so focus turns to that.
 - **[Oct 04 2023: Hackathon](https://hackmd.io/fmKp0If5RkiwWIxYYRdKpg)** is held and Draga demos working branch of menu contributions. Core devs present discuss various outstanding items. This discussion is summarised in the linked notes.
 
