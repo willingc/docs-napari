@@ -16,14 +16,14 @@ end-user to choose which one they want. If they installed napari with `pip
 install napari[all]`, then this includes `PyQt5` from PyPI as the default backend.
 If they installed via `conda install napari pyqt`, then they'll have `PyQt5`,
 but from conda-forge instead of PyPI. Meanwhile, the napari bundle installs with PySide2.
-Users are also free to install PyQt6, which is fully supported, or the 
+Users are also free to install PyQt6, which is fully supported, or the
 experimental PySide6 backend.
 
 Here's what can go wrong if you *also* declare one of these backends **or napari[all]**
 in the `dependencies`/`install_requires` section of your plugin metadata:
 
 - If they installed via `conda install napari pyqt` and then they install your plugin
-  via `pip` (or vice versa) then there *will* be a binary incompatibility between the 
+  via `pip` (or vice versa) then there *will* be a binary incompatibility between the
   conda `pyqt` installation, and the `PyQt5` installation from PyPI. *This will very likely
   lead to a broken environment, forcing the user to re-create their entire
   environment and re-install napari*. This is an unfortunate consequence of
@@ -32,9 +32,9 @@ in the `dependencies`/`install_requires` section of your plugin metadata:
 - Alternatively, they may end up with some combination of *both* PyQt5, PyQt6, PySide2,
   and PySide6 in their environment: the Qt backend they had installed and the one your
   plugin installed as a dependency. This is will not *always* to break things, but
-  it will lead to unexpected and difficult to debug problems. 
+  it will lead to unexpected and difficult to debug problems.
 - Both of the above cases are most likely to happen with the built-in GUI napari plugin manager,
-  which will install your plugin plus the base dependencies. As a result, this frequently 
+  which will install your plugin plus the base dependencies. As a result, this frequently
   occurs with the bundle app. Trying to fix these issues is almost impossible for GUI centric
   users, leaving them the only recourse of re-installing.
 
@@ -55,7 +55,7 @@ command line installation in a fresh environment. In `pyproject.toml` this would
     pip install my_plugin[all]
     ```
     Meanwhile, the napari plugin manager will still just install your plugin without the Qt
-    dependency.  
+    dependency.
 
 ````
 
@@ -113,17 +113,17 @@ will run into difficulties installing your plugin:
 - *How do I know if one of my dependencies uses C Extensions?*
 
   First, look for the presence of C or C++ in the "Languages" side-bar
-  of the repository. Otherwise, there's no one right way, but more often than not, 
+  of the repository. Otherwise, there's no one right way, but more often than not,
   if a package uses C extensions, then their `setup.py` file will use the
   [`ext_modules`
   argument](https://docs.python.org/3.11/distutils/setupscript.html#describing-extension-modules).
-    
+
 
 ````{admonition} What about conda?
 **conda** also distributes & installs pre-compiled packages, though they aren't
-wheels.  We encourage you to make your plugins 
+wheels.  We encourage you to make your plugins
 [available on conda-forge](deploying-to-conda-forge), which
-is a great way to handle binary dependencies in a reliable way. The built-in 
+is a great way to handle binary dependencies in a reliable way. The built-in
 [napari plugin manager](https://napari.org/napari-plugin-manager) currently
 supports installing plugins from both PyPI and conda-forge, with the default matching
 the source of the napari installation.

@@ -61,7 +61,7 @@ From the dialog, you can install plugins in the following ways:
   If you want to install `napari-svg` from a specific release, enter `napari-svg==0.1.0` in the text field.
   ```
   ```{admonition} Installing with Optional Dependency Groups
-  To install a plugin with a group of option dependencies, use the optional group in brackets. If you want to install `napari-svg` with the optional testing group, enter `napari-svg[testing]` in the text field. 
+  To install a plugin with a group of option dependencies, use the optional group in brackets. If you want to install `napari-svg` with the optional testing group, enter `napari-svg[testing]` in the text field.
   ```
 
 - **Advanced installation:** After searching for the plugin you wish to install, click on the

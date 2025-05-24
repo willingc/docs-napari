@@ -142,7 +142,7 @@ You can now run your script from the command line to launch the viewer with your
 python my_example_script.py
 ```
 
-The [examples gallery](../../gallery) consists of code examples which can be
+The [examples gallery](../../howtos/gallery.md) consists of code examples which can be
 downloaded as `.py` (and `.ipynb` files) and run as above.
 
 ![image: napari launched from a python script](../../_static/images/launch_script.png)
@@ -187,7 +187,7 @@ and where data changed in the GUI will be accessible in the console.
 ### Jupyter notebook usage
 
 You can also launch `napari` from a Jupyter notebook. The
-[examples gallery](../../gallery), as mentioned above, can also be downloaded as
+[examples gallery](../../howtos/gallery.md), as mentioned above, can also be downloaded as
 `.ipynb` which can be run from a Jupyter notebook.
 
 Below, we launch the [notebook example](https://github.com/napari/napari/blob/main/examples/notebook.ipynb) from a Jupyter notebook.
@@ -243,9 +243,9 @@ a Qt dynamic dependency that is incompatible with the one that napari uses.
 As linkers first search in `LD_LIBRARY_PATH` directories, this may cause napari to crash.
 
 
-If you want to debug this issue for your specific use case, you 
+If you want to debug this issue for your specific use case, you
 should start with manually importing the `qt` package in Python.
-This will provide you with more information about problem. 
+This will provide you with more information about problem.
 
 Such import may look like **one** of the following lines:
 

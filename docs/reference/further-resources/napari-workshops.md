@@ -37,7 +37,7 @@ or contact the core developers on [zulip chat](https://napari.zulipchat.com/logi
 
 * September 2023
   * [Plugin design](https://chanzuckerberg.github.io/napari-plugin-accel-workshops/workshops/design23.html) and [software development workshop](https://chanzuckerberg.github.io/napari-plugin-accel-workshops/workshops/softwaredev.html) for [napari plugin grantees](https://chanzuckerberg.com/rfa/napari-plugin-grants/).
-  * [Bioimage Analysis with Python and Napari (video lecture)](https://www.youtube.com/watch?v=QDS5t7oZH-c) at the [EMBO Practical Course for Advanced Methods in Bioimage Analysis](https://www.embl.org/about/info/course-and-conference-office/events/bia23-01/)  
+  * [Bioimage Analysis with Python and Napari (video lecture)](https://www.youtube.com/watch?v=QDS5t7oZH-c) at the [EMBO Practical Course for Advanced Methods in Bioimage Analysis](https://www.embl.org/about/info/course-and-conference-office/events/bia23-01/)
 
 * August 2023, [LIBRE hub](https://librehub.github.io) & Latin America Bioimaging
   * [Image data science with Python and Napari](https://librehub.github.io/napari-LatAm-workshop-2023/intro.html#)

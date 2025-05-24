@@ -72,7 +72,7 @@ In order to make changes to `napari`, you will need to [fork](https://docs.githu
     ```sh
     pip install -e ".[pyqt6,dev]"  # (quotes only needed for zsh shell)
     ```
-    
+
     If you wish to install the developer tools only, use the following. Choose
     this option if you wish to install your Qt backend separately, such as if you already have
     a Qt backend installed or if you use an experimental backend like PySide6:
@@ -104,7 +104,7 @@ In order to make changes to `napari`, you will need to [fork](https://docs.githu
 
    Code will also be linted to enforce the stylistic and logistical rules specified
    in the `[tool.ruff]` section of
-   [our `pyproject.toml` file](https://github.com/napari/napari/blob/main/pyproject.toml). 
+   [our `pyproject.toml` file](https://github.com/napari/napari/blob/main/pyproject.toml).
    For information on any specific `ruff` error code, see the
    [Ruff Rules](https://docs.astral.sh/ruff/rules/).  You may also wish to refer
    to the [PEP 8 style guide](https://peps.python.org/pep-0008/).

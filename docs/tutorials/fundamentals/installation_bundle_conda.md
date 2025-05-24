@@ -87,7 +87,7 @@ The first time you open napari you must use the Launchpad, but in subsequent use
 
 napari comes installed with sample images from scikit-image. Use the dropdown menu File > Open Sample > napari to open a sample image, or open one of your own images using File > Open or dragging and dropping your image onto the canvas.
 
-Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../usage.md).
+Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../howtos/usage.md).
 
 ### How to Install the Windows bundle
 
@@ -119,7 +119,7 @@ You can now get started using napari! A shortcut to launch napari can be found i
 
 napari comes installed with sample images from scikit-image. Use the dropdown menu File > Open Sample > napari to open a sample image, or open one of your own images using File > Open or dragging and dropping your image onto the canvas.
 
-Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../usage.md).
+Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../howtos/usage.md).
 
 ### How to Install the Linux bundle
 
@@ -153,4 +153,4 @@ You can now get started using napari! A shortcut to launch napari should appear 
 
 napari comes installed with sample images from scikit-image. Use the dropdown menu File > Open Sample > napari to open a sample image, or open one of your own images using File > Open or dragging and dropping your image onto the canvas.
 
-Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../usage.md).
+Next check out our [tutorial on the viewer](viewer.md) or explore any of the pages under the [Usage tab](../../howtos/usage.md).

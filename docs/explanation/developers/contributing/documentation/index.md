@@ -43,7 +43,7 @@ or [editing an existing file](https://docs.github.com/en/repositories/working-wi
 on the [napari/docs](https://github.com/napari/docs) GitHub repository.
 It's best if you first [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) the [napari/docs](https://github.com/napari/docs) repository to your own GitHub account, create a [feature branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch), upload/create/edit files through the GitHub web interface, and then [open a pull request from your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) back to [napari-docs](https://github.com/napari/docs).
 
-When you submit your PR, CI will kick off several jobs, including generation of a preview of 
+When you submit your PR, CI will kick off several jobs, including generation of a preview of
 the documentation. By default, CI will use the `slimfast` build ("make target"), which
 doesn't build any content from outside the `docs` repository or run any `docs` notebook cells.
 This is great for seeing the copy and formatting. If you want to preview other elements,
@@ -56,18 +56,18 @@ where `<target>` can be:
 - `html-noplot` : a full build, but without the gallery examples from `napari/napari`
 - `docs` : only the content from `napari/docs`, with notebook code cells executed
 - `slimfast` : the default, only the content from `napari/docs`, without code cell execution
-- `slimgallery` : `slimfast`, but also builds the gallery examples from `napari/napari` 
+- `slimgallery` : `slimfast`, but also builds the gallery examples from `napari/napari`
 
-For more information about these targets see the ["building locally"](build_docs_locally) section 
-of the documentation, including the part on [specialized builds](#building-what-you-need).  
+For more information about these targets see the ["building locally"](build_docs_locally) section
+of the documentation, including the part on [specialized builds](#building-what-you-need).
 
 Once the jobs complete you will also be able to [preview the documentation](doc_view_ci) by
-using the `Check the rendered docs here!` action at the bottom of your PR, which will go to a 
-preview website on [CircleCI](https://circleci.com/). Alternatively, you can download a zip file 
+using the `Check the rendered docs here!` action at the bottom of your PR, which will go to a
+preview website on [CircleCI](https://circleci.com/). Alternatively, you can download a zip file
 of [the build artifact](#download-documentation-artifact) and open the html files directly in your browser. For a build triggered by a comment, use
 the "Triggered Docs Artifact Build" link.
 
-If needed, a member of the maintenance team will help with updating the [napari.org](https://napari.org/dev) 
+If needed, a member of the maintenance team will help with updating the [napari.org](https://napari.org/dev)
 table of contents where necessary (by placing a reference to your new file in [docs/_toc.yml](update-toc))
 and making sure your documentation has built correctly.
 
@@ -315,13 +315,13 @@ To see the markdown document structure and content change in real-time without b
 
 ### 3.1. Building locally
 
-To build the documentation locally we use the 
-[`make` tool](https://en.wikipedia.org/wiki/Make_(software)) to execute 
+To build the documentation locally we use the
+[`make` tool](https://en.wikipedia.org/wiki/Make_(software)) to execute
 [`sphinx`](https://www.sphinx-doc.org/en/master/) builds, as defined in the
-`Makefile` at the root of the `docs` repository.  
+`Makefile` at the root of the `docs` repository.
 
-Once the build is completed rendered HTML will be placed in `docs/_build/html`. 
-Find `index.html` in this folder and drag it into a browser to preview the 
+Once the build is completed rendered HTML will be placed in `docs/_build/html`.
+Find `index.html` in this folder and drag it into a browser to preview the
 website with your new document.
 
 You can also run this Python one-liner to deploy a quick local server on
@@ -333,22 +333,22 @@ $ python3 -m http.server --directory docs/_build/html
 
 :::{note}
 The entire build process pulls together files from multiple sources and can be
-time consuoming, with a full build taking upwards of 20 minutes. Additionally, 
-building the examples gallery, as well as executing notebook cells will 
-repeatedly launch `napari`, resulting in flashing windows. 
+time consuoming, with a full build taking upwards of 20 minutes. Additionally,
+building the examples gallery, as well as executing notebook cells will
+repeatedly launch `napari`, resulting in flashing windows.
 
-As a result, there are several partial-build options available in addition to 
-a full build that only build certain parts of the full documentation build. 
-Depending on what you want to contribute, **you may never need to run the full 
-build locally**. For example, maybe you don't want to build the examples gallery 
-or you only want to edit copy and not run the notebook cells or only want to 
+As a result, there are several partial-build options available in addition to
+a full build that only build certain parts of the full documentation build.
+Depending on what you want to contribute, **you may never need to run the full
+build locally**. For example, maybe you don't want to build the examples gallery
+or you only want to edit copy and not run the notebook cells or only want to
 edit a single napari example. See [Building what you need](#building-what-you-need)
 for details.
 :::
 
 #### Running a full build
 
-To run a full documentation build from scratch, matching what is deployed 
+To run a full documentation build from scratch, matching what is deployed
 at [napari.org](https://napari.org), run:
 
 ```bash
@@ -359,14 +359,14 @@ napari with the [docs prerequisites](prerequisites)). Note this can take upwards
 and will repeatedly pop up napari viewers as examples and notebook cells are executed.
 
 If the changes you have made to documentation don't involve the gallery of napari examples,
-which are in the `examples` directory in the `napari` repository, you can speed up this 
+which are in the `examples` directory in the `napari` repository, you can speed up this
 build by running:
 
 ```bash
 make html-noplot
 ```
 
-This will skip the gallery build, which involves launching up napari and rendering 
+This will skip the gallery build, which involves launching up napari and rendering
 all the examples, but it will still build all of the other content, including the
 [UI architecture diagrams](ui-sections), [events reference](events-reference), and
 [preferences](napari-preferences), which are generated from sources in the `napari`
@@ -408,21 +408,21 @@ make html GALLERY_PATH=../../napari/examples
 :class: tip
 We've provided several build variants with `-live` that will use
 [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild).
-When using these `make` variants, when you save a file, re-builds 
+When using these `make` variants, when you save a file, re-builds
 of the changed file will be triggered automatically and will be faster,
-because not everything will be built from scratch. Further, a browser preview 
-will open up automatically at `http://127.0.0.1`, no need for further action! 
+because not everything will be built from scratch. Further, a browser preview
+will open up automatically at `http://127.0.0.1`, no need for further action!
 Edit the documents at will, and the browser will auto-reload.
 Once you are done with the live previews, you can exit via <kbd>Ctrl</kbd>+<kbd>C</kbd>
 on your terminal.
 
-For example, if you are not editing the gallery examples in the napari repository, 
+For example, if you are not editing the gallery examples in the napari repository,
 but otherwise want a full build, then you can use:
 
 ```bash
 make html-noplot-live
 ```
-The first run will be a full build (without the gallery) so a number of napari 
+The first run will be a full build (without the gallery) so a number of napari
 instances will pop up, but then when re-building on save only edited files will
 be rebuilt.
 
@@ -456,11 +456,11 @@ of the external materials built**, then you can use the `docs` build variant. Ru
 ```bash
 make docs
 ```
-or 
+or
 ```bash
 make docs-live
 ```
-Note that this will still execute the `docs` repository notebook code cells, 
+Note that this will still execute the `docs` repository notebook code cells,
 resulting in napari windows popping up repeatedly. The [`-live`
 variant](live-builds) will open a browser preview and auto-rebuild any pages you edit.
 
@@ -482,11 +482,11 @@ make slimfast-live
 These will not build any of the external content (such as the gallery) and will
 not execute code cells. `slimfast` will run the build in parallel, which can be
 significantly faster on multi-core machines (under a minute), while `slimfast-live`
-will open a browser preview and auto-rebuild any pages you edit. 
+will open a browser preview and auto-rebuild any pages you edit.
 See [the `-live` builds note](live-builds).
 
 **If you are working on the napari examples and want to build the whole examples
-gallery, but not other external content nor the `docs` notebook cell outputs**, 
+gallery, but not other external content nor the `docs` notebook cell outputs**,
 then you can use:
 
 ```bash
@@ -544,7 +544,7 @@ make prep-docs
 ```
 Note that this is can take upwards of 10 minutes! Run this if you are interested
 in building the external resources or editing the scripts that generate them in
-`docs/docs/_scripts`. In most cases `make prep-stubs` will suffice, which will 
+`docs/docs/_scripts`. In most cases `make prep-stubs` will suffice, which will
 generate place-holder stub files for the external content.
 
 (doc_view_ci)=
@@ -758,7 +758,7 @@ Finally, you can find the current example dependencies in [the `pyproject.toml` 
 
 ### Cross-referencing Gallery examples
 
-If you want to generate links to Gallery examples from anywhere in the docs, then the cross-referencing format you use will depend on the format of the doc you are writing. Note that the gallery examples live in `/gallery` despite being in `napari/examples` because [`docs/docs/conf.py`](https://github.com/napari/docs/blob/main/docs/conf.py) specifies that examples are built into the `gallery` directory. The [Sphinx cross-reference namespace](https://sphinx-gallery.github.io/stable/advanced.html#know-your-gallery-files) is generated with the `sphx_glr` prefix, then path separators are converted to underscores, for example `/gallery/add_image.py` becomes `_gallery_add_image.py` to get the end result `sphx_glr_gallery_add_image.py`. 
+If you want to generate links to Gallery examples from anywhere in the docs, then the cross-referencing format you use will depend on the format of the doc you are writing. Note that the gallery examples live in `/gallery` despite being in `napari/examples` because [`docs/docs/conf.py`](https://github.com/napari/docs/blob/main/docs/conf.py) specifies that examples are built into the `gallery` directory. The [Sphinx cross-reference namespace](https://sphinx-gallery.github.io/stable/advanced.html#know-your-gallery-files) is generated with the `sphx_glr` prefix, then path separators are converted to underscores, for example `/gallery/add_image.py` becomes `_gallery_add_image.py` to get the end result `sphx_glr_gallery_add_image.py`.
 
 - For `.md` files (myst, used in the majority of docs), use the `{ref}` directive. ``{ref}`sphx_glr_gallery_add_image.py` `` displays as: {ref}`sphx_glr_gallery_add_image.py`
 - For `.py` files (rst, used in the example gallery), cross-reference with the `:ref:` directive: `` :ref:`sphx_glr_gallery_example.py` ``.

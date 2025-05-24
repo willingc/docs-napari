@@ -141,7 +141,7 @@ napari/components/viewer_model.pyi
 # Sphinx documentation
 docs/_build
 docs/_tags/
-docs/api/napari*
+docs/reference/api/napari*
 docs/gallery/
 docs/guides/preferences.md
 docs/guides/_layer_events.md
