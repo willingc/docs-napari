@@ -1,0 +1,58 @@
+{
+  "name": "napari/docs (pixi)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  // napari/docs is mounted here by VS Code
+  "workspaceFolder": "/workspaces/docs",
+
+  // Clone napari/napari next to docs, then let pixi install the environment
+  "onCreateCommand": "bash /workspaces/docs/.devcontainer/on-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Python (points at the pixi-managed interpreter)
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        // MyST / Sphinx docs authoring
+        "executablebookproject.myst-highlight",
+        "lextudio.restructuredtext",
+        "trond-snekvik.simple-rst",
+        // Spell checking
+        "streetsidesoftware.code-spell-checker",
+        // TOML (pixi.toml editing)
+        "tamasfe.even-better-toml",
+        // Git
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        // Let the pixi-shell task set the right interpreter path;
+        // the wildcard covers the hashed env dir pixi creates.
+        "python.defaultInterpreterPath": "/root/.pixi/envs/default/bin/python",
+        "python.terminal.activateEnvironment": false,
+        // Qt / napari processes launched from the terminal will use
+        // the virtual display started by on-create.sh
+        "terminal.integrated.env.linux": {
+          "DISPLAY": ":99",
+          "QT_QPA_PLATFORM": "offscreen",
+          "PATH": "/root/.pixi/bin:${env:PATH}"
+        }
+      }
+    }
+  },
+
+  // Port 8000 → local doc-preview server
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Docs preview",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "remoteUser": "root"
+}
